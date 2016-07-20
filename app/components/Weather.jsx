@@ -20,10 +20,10 @@ var Weather = React.createClass({
       temp: undefined
     });
 
-    openWeatherMap.getTemp(location).then(function (temp) {
+    openWeatherMap.getTemp(location).then(function (weatherObject) {
       that.setState({
-        location: location,
-        temp: temp,
+        location: weatherObject.location,
+        temp: weatherObject.temp,
         isLoading: false
       });
     }, function (e) {
